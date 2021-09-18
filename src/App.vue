@@ -1,17 +1,28 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  {{ message }}
+  <input class="form-control" type="text" ref="book">
+  <button class="btn btn-primary" @click="handClic">Click</button>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data(){
+    return {
+      message: "Prostam"
+    }
+  },
+    methods: {
+      handClic(){
+        console.log( this.$refs.book.value);
+        this.$refs.book.classList.add('active');
+        this.$refs.book.focus();
+
+      }
+    }
   }
-}
 </script>
 
 <style>
