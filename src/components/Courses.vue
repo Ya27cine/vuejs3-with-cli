@@ -1,4 +1,11 @@
 <template >
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1>List of Courses</h1>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-md-4"  v-for="course in courses">
 
@@ -48,6 +55,10 @@ export default {
     },
 }
 </script>
-<style >
-    
+
+
+<style scoped>
+h1{
+    color: red;
+  }
 </style>
