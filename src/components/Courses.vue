@@ -1,21 +1,16 @@
 <template >
-
     <div class="row">
         <div class="col-md-12">
             <h1>List of Courses</h1>
         </div>
     </div>
-
     <div class="row">
         <div class="col-md-4"  v-for="course in courses">
 
-            <OneCourse :course="course" />
+            <OneCourse :course="course" @delete="deleteOneCourse($event)" />
 
         </div>
     </div>
-
-
-
 </template>
 <script>
     import OneCourse from './OneCourse'
@@ -55,12 +50,20 @@ export default {
             ]
         }
     },
+    methods:{
+        deleteOneCourse(id){
+            alert('delete from paranet'+id)
+            this.courses =  this.courses.filter( function(course){
+                    return course.id != id
+            });
+        }
+    }
 }
 </script>
 
 
 <style scoped>
 h1{
-    color: red;
+    color: brown;
   }
 </style>

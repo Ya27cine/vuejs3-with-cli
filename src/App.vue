@@ -17,7 +17,7 @@
       <Courses />
     </div>
 
-    <Footer url="https://www.eprostam.com"  title="SASU PROSTAM"  text="Conseil Informatique" />
+    <Footer url="https://www.eprostam.com"  title="SASU PROSTAM"  text="Conseil Informatique"  />
 
 </template>
 
