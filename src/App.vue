@@ -1,17 +1,46 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  {{ message }}
-  <input class="form-control" type="text" ref="book">
-  <button class="btn btn-primary" @click="handClic">Click</button>
+
+   <Header />
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto text-center">
+
+              <img alt="Vue logo" src="./assets/logo.png">
+              <h1>   {{ message }}   </h1>
+
+              <AddCourse />
+             
+        </div>
+      </div>
+      <Courses />
+    </div>
+
+    <Footer />
+
 </template>
 
 <script>
 
+import Header from './components/Header.vue';
+import AddCourse from './components/AddCourse.vue';
+import Courses from './components/Courses.vue';
+import Footer from './components/Footer.vue';
+
+
 export default {
   name: 'App',
+
+  components: {
+    Header, 
+    AddCourse, 
+    Courses,
+    Footer
+  },
+
   data(){
     return {
-      message: "Prostam"
+      message: "Samphone Reparation"
     }
   },
     methods: {
@@ -32,6 +61,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.container{
   margin-top: 60px;
 }
 </style>
