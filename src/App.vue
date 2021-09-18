@@ -13,10 +13,11 @@
              
         </div>
       </div>
+
       <Courses />
     </div>
 
-    <Footer />
+    <Footer url="https://www.eprostam.com"  title="SASU PROSTAM"  text="Conseil Informatique" />
 
 </template>
 
@@ -55,15 +56,5 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-.container{
-  margin-top: 60px;
-}
 </style>

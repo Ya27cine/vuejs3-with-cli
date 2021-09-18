@@ -9,19 +9,21 @@
     <div class="row">
         <div class="col-md-4"  v-for="course in courses">
 
-                <div class="card my-3">
-                    <img class="card-img-top" :src="course.image" :alt="course.title">
-                    <div class="card-body">
-                        <h4 class="card-title">{{  course.title }}</h4>
-                        <p class="card-text">Text</p>
-                    </div>
-                </div>
+            <OneCourse :course="course" />
 
         </div>
     </div>
+
+
+
 </template>
 <script>
+    import OneCourse from './OneCourse'
 export default {
+
+    components: {
+        OneCourse
+    },
     data() {
         return {
             courses:[
