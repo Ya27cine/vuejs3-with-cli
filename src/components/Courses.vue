@@ -1,17 +1,28 @@
 <template >
     <div class="row">
-        <div class="col-md-12">
-            <h1>List of Courses</h1>
+        <div class="col-md-6">
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <slot></slot>
+            </nav>
+        </div>
+        <div class="col-md-6 text-end">
+            <slot name="button-right"></slot>
         </div>
     </div>
+    <h1>List of Courses</h1>
     <div class="row">
         <div class="col-md-4"  v-for="course in courses">
 
-            <OneCourse :course="course" @delete="deleteOneCourse($event)" />
-
+            <OneCourse :course="course" 
+                        @delete="deleteOneCourse($event)" 
+            />
+            
         </div>
     </div>
 </template>
+
+
+
 <script>
     import OneCourse from './OneCourse'
 export default {
