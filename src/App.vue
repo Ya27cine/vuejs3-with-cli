@@ -14,7 +14,19 @@
         </div>
       </div>
 
-      <Courses />
+      <Courses> 
+
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">List courses</li>
+        </ol>
+
+        <template v-slot:button-right>
+              <button class="btn btn-sm btn-success">New</button>
+        </template>
+
+      </Courses>
+      
     </div>
 
     <Footer url="https://www.eprostam.com"  title="SASU PROSTAM"  text="Conseil Informatique"  />
