@@ -8,8 +8,6 @@
 
               <img alt="Vue logo" src="./assets/logo.png">
               <h1>   {{ message }}   </h1>
-
-              <AddCourse />
              
         </div>
       </div>
@@ -29,14 +27,17 @@
       
     </div>
 
-    <Footer url="https://www.eprostam.com"  title="SASU PROSTAM"  text="Conseil Informatique"  />
+    <Footer 
+              url="https://www.eprostam.com"  
+              title="SASU PROSTAM"  
+              text="Conseil Informatique"  
+    />
 
 </template>
 
 <script>
 
 import Header from './components/Header.vue';
-import AddCourse from './components/AddCourse.vue';
 import Courses from './components/Courses.vue';
 import Footer from './components/Footer.vue';
 
@@ -46,7 +47,6 @@ export default {
 
   components: {
     Header, 
-    AddCourse, 
     Courses,
     Footer
   },

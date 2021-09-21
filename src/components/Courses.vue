@@ -1,4 +1,11 @@
 <template >
+
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+                <AddCourse @nadd="addCourse($event)" />
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-md-6">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
@@ -24,11 +31,14 @@
 
 
 <script>
-    import OneCourse from './OneCourse'
+    import OneCourse from './OneCourse';
+    import AddCourse from './AddCourse.vue';
+
 export default {
 
     components: {
-        OneCourse
+        OneCourse,
+        AddCourse
     },
     data() {
         return {
@@ -67,6 +77,9 @@ export default {
             this.courses =  this.courses.filter( function(course){
                     return course.id != id
             });
+        },
+        addCourse(course){
+            this.courses = [course, ...this.courses]
         }
     }
 }
