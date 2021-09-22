@@ -12,10 +12,6 @@
     <div class="d-grid gap-1">
              <button  @click="newCourse" class="btn btn-block  btn-warning my-2">Add</button>
      </div>
-    
-
-    
-
 
 </template>
 
@@ -41,8 +37,7 @@ export default {
            this.$refs.title.value  = "";
            this.$refs.image.value  = "";
         }
-    }
-    
+    } 
 }
 </script>
 

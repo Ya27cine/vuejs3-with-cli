@@ -3,14 +3,7 @@
    <Header />
 
     <div class="container">
-      <div class="row">
-        <div class="col-md-6 mx-auto text-center">
-
-              <img alt="Vue logo" src="./assets/logo.png">
-              <h1>   {{ message }}   </h1>
-             
-        </div>
-      </div>
+     
 
       <Courses> 
 
@@ -19,11 +12,7 @@
           <li class="breadcrumb-item active" aria-current="page">List courses</li>
         </ol>
 
-        <template v-slot:button-right>
-              <button class="btn btn-sm btn-success">New</button>
-        </template>
-
-      </Courses>
+      </Courses >
       
     </div>
 
@@ -53,7 +42,8 @@ export default {
 
   data(){
     return {
-      message: "Samphone Reparation"
+      message: "Samphone Reparation",
+      isShow: false
     }
   },
     methods: {
@@ -63,7 +53,9 @@ export default {
         this.$refs.book.focus();
 
       }
-    }
+    },
+  
+        
   }
 </script>
 

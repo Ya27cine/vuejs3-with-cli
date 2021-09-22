@@ -1,22 +1,29 @@
 <template >
 
-    <div class="row">
+    <div class="row" v-if="showForm">
         <div class="col-md-6 mx-auto">
-                <AddCourse @nadd="addCourse($event)" />
+            <AddCourse @nadd="addCourse($event)"  />
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-6">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-                <slot></slot>
+                <slot>  </slot>
             </nav>
+            <h1>List of Courses</h1>
         </div>
+
         <div class="col-md-6 text-end">
-            <slot name="button-right"></slot>
+            <button  
+                    @click="displayForm"
+                    class="btn btn-sm "
+                    :class="{'btn-success': !showForm, 'btn-dark': showForm}">
+                  {{ (showForm)? 'Close':'New'}}
+                </button>
         </div>
     </div>
-    <h1>List of Courses</h1>
+    
     <div class="row">
         <div class="col-md-4"  v-for="course in courses">
 
@@ -35,13 +42,13 @@
     import AddCourse from './AddCourse.vue';
 
 export default {
-
     components: {
         OneCourse,
         AddCourse
     },
     data() {
         return {
+            showForm: false,
             courses:[
                 {
                     id: 1, 
@@ -80,6 +87,9 @@ export default {
         },
         addCourse(course){
             this.courses = [course, ...this.courses]
+        },
+        displayForm(){
+            this.showForm = ! this.showForm;
         }
     }
 }
