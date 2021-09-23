@@ -9,13 +9,11 @@
         <label for="Image"></label>
         <input v-model="image" id="Image" class="form-control" type="text" placeholder="Url">
     </div>
-    <div class="d-grid gap-1">
-             <button  @click="newCourse" class="btn btn-block  btn-warning my-2">Add</button>
-     </div>
-
+   
 
      <div class="form-group">
-         <select v-model="category"  class="form-control">
+         <label for="category"></label>
+         <select v-model="category" id="category" class="form-control">
              <option  
                         v-for="category in categories"
                         :value="category.id"> 
@@ -24,11 +22,28 @@
          </select>
      </div>
 
+     <div class="form-check form-check-inline">
+        <input v-model="typeOfPayment"  class="form-check-input" type="radio" name="typeOfPayment" id="flexRadioDefault1" value="free" >
+        <label class="form-check-label" for="flexRadioDefault1">
+           Free
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input v-model="typeOfPayment" class="form-check-input" type="radio" name="typeOfPayment" id="flexRadioDefault2" value="paying">
+        <label class="form-check-label" for="flexRadioDefault2">
+          Paying
+        </label>
+    </div>
+
+     <div class="d-grid gap-1">
+        <button  @click="newCourse" class="btn btn-block  btn-warning my-2">Add</button>
+    </div>
 
      <div class="well my-3">
          <p>Title: {{title}}</p>
          <p>Url: {{image}}</p>
          <p>category: {{category}}</p>
+         <p>typeOfpayment: {{typeOfPayment}}</p>
      </div>
 </template>
 
@@ -45,7 +60,8 @@ export default {
                 {'id': 3, 'name': "FullStack"},
                 {'id': 4, 'name': "Mobile"},
             ],
-            category: 3
+            category: 3,
+            typeOfPayment: "free"
         }
     },
     methods:{
