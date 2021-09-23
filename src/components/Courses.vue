@@ -35,8 +35,14 @@
     </div>
 
     <teleport to="#alert" v-if="courseDeleted"> 
-        <div class="alert alert-danger" >
+        <div class="alert alert-danger text-center" >
             <strong>Course is deleted !</strong>
+        </div>
+    </teleport>
+
+    <teleport to="#alert" v-if="courseAdded"> 
+        <div class="alert alert-success text-center" >
+            <strong>Course is Added successfuly !</strong>
         </div>
     </teleport>
    
@@ -58,6 +64,7 @@ export default {
         return {
             showForm: false,
             courseDeleted: false,
+            courseAdded: false,
             courses:[
                 {
                     id: 1, 
@@ -95,9 +102,7 @@ export default {
             });
             this.courseDeleted = true;
 
-            setTimeout(() => {
-                this.courseDeleted = false;
-            }, 3000);
+            setTimeout(() => { this.courseDeleted = false; }, 3000);
         },
         addCourse(course){
           //  let id = Math.max.apply(Math, this.courses.map(function(c) { return c.id; })) + 1;
@@ -111,6 +116,10 @@ export default {
             }
             this.courses = [course, ...this.courses];
             this.showForm = false;
+
+            this.courseAdded = true;
+
+            setTimeout(() => { this.courseAdded = false; }, 3000);
         },
         displayForm(){
             this.showForm = ! this.showForm;
