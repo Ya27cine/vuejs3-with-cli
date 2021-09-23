@@ -2,12 +2,12 @@
 
      <div class="form-group">
         <label for="Title"></label>
-        <input ref="title" id="Title" class="form-control" type="text">
+        <input v-model="title" id="Title" class="form-control" type="text" placeholder="Title">
     </div>
 
     <div class="form-group">
         <label for="Image"></label>
-        <input ref="image" id="Image" class="form-control" type="text">
+        <input v-model="image" id="Image" class="form-control" type="text" placeholder="Url">
     </div>
     <div class="d-grid gap-1">
              <button  @click="newCourse" class="btn btn-block  btn-warning my-2">Add</button>
@@ -18,12 +18,16 @@
 
 <script>
 export default {
-
-
+    data() {
+        return {
+            title: '',
+            image: ''
+        }
+    },
     methods:{
         newCourse(){
-            let title = this.$refs.title.value;
-            let image = this.$refs.image.value;
+            let title = this.title;
+            let image = this.image;
 
             if(title == "" || image == "") return;
 
@@ -34,8 +38,8 @@ export default {
 
            this.$emit('nadd', course);
            
-           this.$refs.title.value  = "";
-           this.$refs.image.value  = "";
+           this.title = "";
+           this.image  = "";
         }
     } 
 }
