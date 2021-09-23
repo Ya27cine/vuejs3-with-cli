@@ -13,6 +13,23 @@
              <button  @click="newCourse" class="btn btn-block  btn-warning my-2">Add</button>
      </div>
 
+
+     <div class="form-group">
+         <select v-model="category"  class="form-control">
+             <option  
+                        v-for="category in categories"
+                        :value="category.id"> 
+                        {{ category.name }} 
+             </option>
+         </select>
+     </div>
+
+
+     <div class="well my-3">
+         <p>Title: {{title}}</p>
+         <p>Url: {{image}}</p>
+         <p>category: {{category}}</p>
+     </div>
 </template>
 
 
@@ -21,7 +38,14 @@ export default {
     data() {
         return {
             title: '',
-            image: ''
+            image: '',
+            categories: [
+                {'id': 1, 'name': "FrontEnd"},
+                {'id': 2, 'name': "BackEnd"},
+                {'id': 3, 'name': "FullStack"},
+                {'id': 4, 'name': "Mobile"},
+            ],
+            category: 3
         }
     },
     methods:{
