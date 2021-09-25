@@ -35,15 +35,36 @@
         </label>
     </div>
 
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" v-model="published">
+         Published
+      </label>
+    </div>
+
+    <div class="my3">
+        <h4> Tags</h4>
+        <div class="form-check" v-for="tag in tags">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" :value="tag" v-model="myTags">
+              {{ tag }}
+          </label>
+        </div>
+    </div>
+
      <div class="d-grid gap-1">
         <button  @click="newCourse" class="btn btn-block  btn-warning my-2">Add</button>
     </div>
 
+    <hr>
      <div class="well my-3">
          <p>Title: {{title}}</p>
          <p>Url: {{image}}</p>
          <p>category: {{category}}</p>
          <p>typeOfpayment: {{typeOfPayment}}</p>
+         <p>published: {{published}}</p>
+         <p>my tags: {{ myTags }}</p>
+
      </div>
 </template>
 
@@ -61,7 +82,10 @@ export default {
                 {'id': 4, 'name': "Mobile"},
             ],
             category: 3,
-            typeOfPayment: "free"
+            typeOfPayment: "free",
+            published: false,
+            tags: ['Framework', 'FrontEnd', 'Backend', 'JavaScript'],
+            myTags:[]
         }
     },
     methods:{
