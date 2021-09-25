@@ -69,27 +69,23 @@ export default {
                 {
                     id: 1, 
                     title: "Learn ReactJS",
-                    image: "https://ih1.redbubble.net/image.1045049975.0131/poster,504x498,f8f8f8-pad,600x600,f8f8f8.jpg"
+                    image: "https://ih1.redbubble.net/image.1045049975.0131/poster,504x498,f8f8f8-pad,600x600,f8f8f8.jpg",
+                    category: {'id': 1, 'name': "FrontEnd"},
+                    tags: ['Backend', 'FrontEnd'],
                 },
                 {
                     id: 2, 
                     title: "Learn Spring Boot",
-                    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.WdsfOLMi-xg3DeBmn6Ev1gHaFV%26pid%3DApi&f=1"
+                    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.WdsfOLMi-xg3DeBmn6Ev1gHaFV%26pid%3DApi&f=1",
+                    category: {'id': 2, 'name': "BackEnd"},
+                    tags: ['Backend'],
                 },
                 {
                     id: 3, 
                     title: "Learn Symfony",
-                    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.explicit.bing.net%2Fth%3Fid%3DOIP.7aN_24cA5HAG-7yUvDNlDQHaHa%26pid%3DApi&f=1"
-                },
-                {
-                    id: 4, 
-                    title: "Learn VueJs",
-                    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi1.wp.com%2Fblog.applibot.co.jp%2Fwp-content%2Fuploads%2F2017%2F07%2Fvuejs-logo.jpg%3Ffit%3D300%252C183%26ssl%3D1&f=1&nofb=1"
-                },
-                {
-                    id: 5, 
-                    title: "Learn Laravel",
-                    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.secret-source.eu%2Fwp-content%2Fuploads%2F2017%2F11%2FLaravel-logo.jpg&f=1&nofb=1"
+                    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.explicit.bing.net%2Fth%3Fid%3DOIP.7aN_24cA5HAG-7yUvDNlDQHaHa%26pid%3DApi&f=1",
+                    category: {'id': 4, 'name': "Mobile"},
+                    tags: ['Backend'],
                 },
             ]
         }
